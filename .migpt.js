@@ -112,9 +112,9 @@ export default {
     // 退出 AI 模式的提示语
     onExitAI: ["傻妞已退出"], // 为空时可关闭提示语
     // AI 开始回答时的提示语
-    onAIAsking: ["让我先想想", "请稍等"], // 为空时可关闭提示语
+    onAIAsking: [], // 为空时可关闭提示语
     // AI 结束回答时的提示语
-    onAIReplied: ["我说完了", "还有其他问题吗"], // 为空时可关闭提示语
+    onAIReplied: ["汇报完毕"], // 为空时可关闭提示语
     // AI 回答异常时的提示语
     onAIError: ["啊哦，出错了，请稍后再试吧！"], // 为空时可关闭提示语
 
@@ -129,7 +129,8 @@ export default {
     // 设备唤醒指令，请到 https://home.miot-spec.com 查询具体指令
     wakeUpCommand: [5, 3],
     // 查询是否在播放中指令，请到 https://home.miot-spec.com 查询具体指令
-    // playingCommand: [3, 1, 1], // 默认无需配置此参数，查询播放状态异常时再尝试开启
+    playingCommand: [4, 1, 1], 
+    // 默认无需配置此参数，查询播放状态异常时再尝试开启
 
     /**
      * 🔊 TTS 引擎
@@ -147,7 +148,7 @@ export default {
      */
 
     // 是否启用连续对话功能，部分小爱音箱型号无法查询到正确的播放状态，需要关闭连续对话
-    streamResponse: false,
+    streamResponse: true,
     // 连续对话时，无响应多久后自动退出
     exitKeepAliveAfter: 30, // 默认 30 秒，建议不要超过 1 分钟
     // 连续对话时，下发 TTS 指令多长时间后开始检测设备播放状态（默认 3 秒）
